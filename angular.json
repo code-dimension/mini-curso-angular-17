@@ -90,7 +90,8 @@
               "buildTarget": "ng-17-todo-list:build:production"
             },
             "development": {
-              "buildTarget": "ng-17-todo-list:build:development"
+              "buildTarget": "ng-17-todo-list:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
