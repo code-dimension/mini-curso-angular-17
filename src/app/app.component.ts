@@ -10,10 +10,16 @@ import { HeaderComponent } from "./shared/components/header/header.component";
   template: `
     <app-header />
 
-    <router-outlet />
+    <main class="main">
+      <router-outlet />
+    </main>
   `,
-  styles: [],
+  styles: [
+    `
+      .main {
+        padding: 16px;
+      }
+    `,
+  ],
 })
-export class AppComponent {
-  title = "ng-17-todo-list";
-}
+export class AppComponent {}
