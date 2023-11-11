@@ -1,14 +1,10 @@
 {
-  "tasks": [
+  "products": [
     {
       "id": 1,
-      "title": "json-server 222",
-      "completed": false
-    },
-    {
-      "title": "json-server 22233",
-      "completed": false,
-      "id": 2
+      "title": "Product 1",
+      "quantity": 5,
+      "price": 10
     }
   ]
 }
