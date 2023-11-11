@@ -1,0 +1,22 @@
+<mat-card class="card">
+  <mat-card-content class="card-content">
+    <div>
+      {{ product.title }}
+    </div>
+
+    <div class="card-content-actions">
+      <button mat-button color="warn" (click)="onDelete.emit(product)">
+        Deletar
+      </button>
+
+      <button
+        class="margin-left-15px"
+        mat-button
+        color="accent"
+        (click)="onChange.emit(product)"
+      >
+        Alterar
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
