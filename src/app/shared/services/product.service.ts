@@ -1,6 +1,7 @@
 import { Injectable, inject } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Product } from "../interfaces/product.interface";
+import { CreateProduct } from "../interfaces/create-product.interface";
 
 @Injectable({
   providedIn: "root",
@@ -16,7 +17,7 @@ export class ProductsService {
     return this.httpClient.get<any>(`/api/products/${id}`);
   }
 
-  post(payload: Exclude<Product, "id">) {
+  post(payload: CreateProduct) {
     return this.httpClient.post<any>(`/api/products/`, payload);
   }
 

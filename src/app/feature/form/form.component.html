@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-content>
-        <form class="form" [formGroup]="form">
+        <form class="form" [formGroup]="form" (ngSubmit)="onSave()">
           <mat-form-field>
             <mat-label>Título</mat-label>
             <input matInput formControlName="title" />
