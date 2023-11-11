@@ -3,11 +3,12 @@ import { ProductsService } from "../../shared/services/product.service";
 import { AsyncPipe } from "@angular/common";
 import { CardComponent } from "./components/card/card.component";
 import { Product } from "../../shared/interfaces/product.interface";
+import { NoTemsComponent } from "./components/no-tems/no-tems.component";
 
 @Component({
   selector: "app-list",
   standalone: true,
-  imports: [AsyncPipe, CardComponent],
+  imports: [AsyncPipe, CardComponent, NoTemsComponent],
   templateUrl: "./list.component.html",
   styleUrl: "./list.component.scss",
 })

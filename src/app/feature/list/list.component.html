@@ -3,5 +3,8 @@
     <app-card [product]="product" (change)="onChange($event)" (delete)="onDelete($event)" />
   }
 } @empty {
-  empty :(
+  @defer (on immediate) {
+    <app-no-tems />
+  }
 } 
+
