@@ -1,10 +1,18 @@
-@for (product of products$ | async; track product.id) {
+<div class="actions">
+  <button mat-raised-button color="accent" [routerLink]="['/form']">Criar Produto</button>
+</div>
+
+@for (product of products$ | async; track product.id) { 
   @defer (on immediate) {
-    <app-card [product]="product" (change)="onChange($event)" (delete)="onDelete($event)" />
-  }
-} @empty {
+    <app-card
+      [product]="product"
+      (change)="onChange($event)"
+      (delete)="onDelete($event)"
+    />
+  } 
+} 
+@empty { 
   @defer (on immediate) {
     <app-no-tems />
   }
-} 
-
+}

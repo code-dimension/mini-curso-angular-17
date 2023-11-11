@@ -4,11 +4,13 @@ import { AsyncPipe } from "@angular/common";
 import { CardComponent } from "./components/card/card.component";
 import { Product } from "../../shared/interfaces/product.interface";
 import { NoTemsComponent } from "./components/no-tems/no-tems.component";
+import { RouterLink } from "@angular/router";
+import { MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: "app-list",
   standalone: true,
-  imports: [AsyncPipe, CardComponent, NoTemsComponent],
+  imports: [AsyncPipe, CardComponent, NoTemsComponent, RouterLink, MatButtonModule],
   templateUrl: "./list.component.html",
   styleUrl: "./list.component.scss",
 })
