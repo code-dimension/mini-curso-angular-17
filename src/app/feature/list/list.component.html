@@ -1,0 +1,7 @@
+@for (product of products$ | async; track product.id) {
+  @defer (on immediate) {
+    <app-card [product]="product" (change)="onChange($event)" (delete)="onDelete($event)" />
+  }
+} @empty {
+  empty :(
+} 
