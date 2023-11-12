@@ -6,7 +6,7 @@
             <input matInput formControlName="title" />
           </mat-form-field>
         
-          <button mat-raised-button color="accent">Salvar</button>
+          <button mat-raised-button color="accent" [disabled]="form.invalid">Salvar</button>
         </form>
     </mat-card-content>
 </mat-card>
