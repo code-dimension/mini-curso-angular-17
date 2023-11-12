@@ -10,3 +10,14 @@ body {
   color: #fff;
   background: #303030;
 }
+
+.centralize-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 780px;
+}

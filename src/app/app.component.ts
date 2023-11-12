@@ -10,8 +10,10 @@ import { HeaderComponent } from "./shared/components/header/header.component";
   template: `
     <app-header />
 
-    <main class="main">
-      <router-outlet />
+    <main class="main centralize-content">
+      <div class="content-container centralize-title">
+        <router-outlet />
+      </div>
     </main>
   `,
   styles: [

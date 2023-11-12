@@ -7,9 +7,17 @@ import { MatToolbarModule } from "@angular/material/toolbar";
   imports: [MatToolbarModule],
   template: `
     <mat-toolbar>
-      <span>Gerenciador de Produtos em Angular v17!</span>
+      <div class="centralize-content">
+        <div class="content-container centralize-title">
+          <span class="">Gerenciador de Produtos em Angular v17!</span>
+        </div>
+      </div>
     </mat-toolbar>
   `,
-  styles: ``,
+  styles: `
+    .centralize-title {
+      text-align: center
+    }
+  `,
 })
 export class HeaderComponent {}
