@@ -1,3 +1,3 @@
 import { Product } from "./product.interface";
 
-export type CreateProduct = Omit<Product, 'id'> 
+export type ProductWithoutId = Omit<Product, 'id'> 

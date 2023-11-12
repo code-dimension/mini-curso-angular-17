@@ -10,9 +10,10 @@ import {
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { ProductsService } from "../../shared/services/product.service";
-import { CreateProduct } from "../../shared/interfaces/create-product.interface";
+import { ProductWithoutId } from "../../shared/interfaces/create-product.interface";
 import { Product } from "../../shared/interfaces/product.interface";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Observable, defer, iif, pipe } from "rxjs";
 
 @Component({
   selector: "app-form",
@@ -44,13 +45,23 @@ export default class FormComponent {
   }
 
   onSave() {
-    if (this.hasProduct()) {
-      const payload = this.form.value;
-      this.productsService.patch(this.product().id, payload);
-    } else {
-      const payload = this.form.value as CreateProduct;
-      this.productsService.post(payload);
-    }
+    const payload = this.form.value as ProductWithoutId;
+
+    iif(
+      () => this.hasProduct(),
+      defer(() => this.saveProduct(payload)),
+      defer(() => this.createProduct(payload))
+    ).subscribe(() => {
+      this.router.navigate(["/"]);
+    });
+  }
+
+  private saveProduct(payload: ProductWithoutId) {
+    return this.productsService.patch(this.product().id, payload);
+  }
+
+  private createProduct(payload: ProductWithoutId) {
+    return this.productsService.post(payload as ProductWithoutId);
   }
 
   private createForm() {
