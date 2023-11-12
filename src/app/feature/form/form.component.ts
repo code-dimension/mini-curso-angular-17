@@ -12,7 +12,7 @@ import { MatCardModule } from "@angular/material/card";
 import { ProductsService } from "../../shared/services/product.service";
 import { CreateProduct } from "../../shared/interfaces/create-product.interface";
 import { Product } from "../../shared/interfaces/product.interface";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-form",
@@ -29,6 +29,7 @@ import { ActivatedRoute } from "@angular/router";
 export default class FormComponent {
   private productsService = inject(ProductsService);
   private activatedRoute = inject(ActivatedRoute);
+  private router = inject(Router);
 
   private product = signal<Product>(
     this.activatedRoute.snapshot.data["product"]
@@ -36,7 +37,7 @@ export default class FormComponent {
 
   private hasProduct = computed(() => Boolean(this.product()));
 
-  form!: FormGroup;
+  form!: FormGroup<{ title: FormControl<string> }>;
 
   ngOnInit(): void {
     this.form = this.createForm();
@@ -45,7 +46,7 @@ export default class FormComponent {
   onSave() {
     if (this.hasProduct()) {
       const payload = this.form.value;
-      this.productsService.patch(this.product().id, payload)
+      this.productsService.patch(this.product().id, payload);
     } else {
       const payload = this.form.value as CreateProduct;
       this.productsService.post(payload);
