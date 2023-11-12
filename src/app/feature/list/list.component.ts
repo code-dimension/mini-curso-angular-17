@@ -41,7 +41,7 @@ export default class ListComponent {
   }
 
   onChange(product: Product) {
-    this.router.navigate(["/form"], { queryParams: { id: product.id } });
+    this.router.navigate(["/edit", product.id], { queryParams: { id: product.id } });
   }
 
   private getProducts() {
