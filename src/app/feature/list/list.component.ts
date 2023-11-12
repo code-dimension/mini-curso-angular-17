@@ -1,29 +1,50 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, signal } from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
 import { ProductsService } from "../../shared/services/product.service";
 import { AsyncPipe } from "@angular/common";
 import { CardComponent } from "./components/card/card.component";
 import { Product } from "../../shared/interfaces/product.interface";
 import { NoTemsComponent } from "./components/no-tems/no-tems.component";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: "app-list",
   standalone: true,
-  imports: [AsyncPipe, CardComponent, NoTemsComponent, RouterLink, MatButtonModule],
+  imports: [
+    CardComponent,
+    NoTemsComponent,
+    RouterLink,
+    MatButtonModule,
+  ],
   templateUrl: "./list.component.html",
   styleUrl: "./list.component.scss",
 })
 export default class ListComponent {
   productsService = inject(ProductsService);
+  router = inject(Router);
 
-  products$ = this.productsService.getAll();
+  products = signal<Product[]>([]);
 
-  onDelete(taskId: number) {
-    this.productsService.delete(taskId);
+  ngOnInit(): void {
+    this.getProducts().subscribe((products) => {
+      this.products.set(products);
+    });
+  }
+
+  onDelete(product: Product) {
+    this.productsService.delete(product.id).subscribe(() => {
+      this.products.update((produts) =>
+        produts.filter(({ id }) => id !== product.id)
+      );
+    });
   }
 
   onChange(product: Product) {
-    throw new Error("Method not implemented.");
+    this.router.navigate(["/form"], { queryParams: { id: product.id } });
+  }
+
+  private getProducts() {
+    return this.productsService.getAll();
   }
 }
