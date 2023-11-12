@@ -8,7 +8,7 @@ import {
 } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
-import { ProductWithoutId } from "../../interfaces/create-product.interface";
+import { ProductWithoutId } from "../../interfaces/product-without-id.interface";
 
 @Component({
   selector: "app-form",

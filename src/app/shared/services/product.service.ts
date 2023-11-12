@@ -1,7 +1,7 @@
 import { Injectable, inject } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Product } from "../interfaces/product.interface";
-import { ProductWithoutId } from "../interfaces/create-product.interface";
+import { ProductWithoutId } from "../interfaces/product-without-id.interface";
 
 @Injectable({
   providedIn: "root",

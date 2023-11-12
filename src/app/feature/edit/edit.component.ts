@@ -2,7 +2,7 @@ import { Component, inject } from "@angular/core";
 import FormComponent from "../../shared/components/form/form.component";
 import { ProductsService } from "../../shared/services/product.service";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ProductWithoutId } from "../../shared/interfaces/create-product.interface";
+import { ProductWithoutId } from "../../shared/interfaces/product-without-id.interface";
 import { Product } from "../../shared/interfaces/product.interface";
 
 @Component({
