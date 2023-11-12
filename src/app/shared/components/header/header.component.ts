@@ -7,7 +7,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
   imports: [MatToolbarModule],
   template: `
     <mat-toolbar>
-      <span>Task Manager Written in Angular v17!</span>
+      <span>Gerenciador de Produtos em Angular v17!</span>
     </mat-toolbar>
   `,
   styles: ``,
