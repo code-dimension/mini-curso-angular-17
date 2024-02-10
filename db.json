@@ -1,8 +1,16 @@
 {
-    "products": [
-        {
-            "id": "1",
-            "title": "Produto de Teste"
-        }
-    ]
+  "products": [
+    {
+      "id": "1",
+      "title": "Produto de Teste"
+    },
+    {
+      "id": "8541",
+      "title": "Henrique"
+    },
+    {
+      "id": "99de",
+      "title": "Jonata"
+    }
+  ]
 }
