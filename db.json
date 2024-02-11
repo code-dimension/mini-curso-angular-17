@@ -1,16 +1,16 @@
 {
   "products": [
     {
-      "title": "Produto de Teste Editado",
+      "isTrusted": true,
       "id": "1"
     },
     {
-      "id": "8541",
-      "title": "Henrique"
+      "isTrusted": true,
+      "id": "8541"
     },
     {
-      "id": "99de",
-      "title": "Jonata"
+      "title": "Jonata 2",
+      "id": "99de"
     },
     {
       "id": "b2f8",
@@ -27,6 +27,10 @@
     {
       "id": "c758",
       "title": "Moletom "
+    },
+    {
+      "id": "589b",
+      "title": "Criando novo produto"
     }
   ]
 }
