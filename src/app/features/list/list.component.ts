@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { ProductsService } from '../../shared/services/products.service';
 import { Product } from '../../shared/interfaces/product.interface';
-import { MatCardModule } from "@angular/material/card";
-import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { CardComponent } from './components/card/card.component';
 import { Router, RouterLink } from '@angular/router';
 
@@ -26,7 +26,7 @@ export class ListComponent {
     });
   }
 
-  onEdit() {
-    this.router.navigateByUrl('/edit-product');
+  onEdit(product: Product) {
+    this.router.navigate(['/edit-product', product.id]);
   }
 }
