@@ -1,27 +1,25 @@
-# ProductStore
+# Mini-Curso Angular 17
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+Nesse projeto foi criado um gerenciador de cadastro de produtos, onde é possível listar, criar, editar e remover produtos.
 
-## Development server
+## O que foi usado
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 17
+- Angular Material 17
+- Json Server como Backend
 
-## Code scaffolding
+## Comandos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Iniciar servidor local
 
-## Build
+O comando abaixo vai iniciar o servidor do Angular
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+npm start
+```
 
-## Running unit tests
+E para iniciar o servidor de JSON Server, execute: 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+npx json-server db.json
+```
