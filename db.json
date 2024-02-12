@@ -1,16 +1,3 @@
 {
-  "products": [
-    {
-      "id": "8c1a",
-      "title": "Blusa"
-    },
-    {
-      "id": "c758",
-      "title": "Moletom "
-    },
-    {
-      "id": "589b",
-      "title": "Criando novo produto"
-    }
-  ]
+  "products": []
 }
